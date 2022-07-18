@@ -34,7 +34,7 @@ Run the following command to get a working version locally
 
 Run this command to test the application
 
-`npm run test`
+`npm test`
 
 ## Authors
 
