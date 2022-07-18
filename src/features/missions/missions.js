@@ -1,9 +1,8 @@
 import React from 'react';
-import Header from '../header/header';
 
 const Missions = () => (
   <>
-    <Header />
+    <h1>Missions</h1>
   </>
 );
 
