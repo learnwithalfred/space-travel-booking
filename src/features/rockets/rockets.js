@@ -30,6 +30,7 @@ const RocketsIndex = () => {
           rocketName={data.rocket_name}
           rocketType={data.rocket_type}
           flickrImage={data.flickr_images[0]}
+          description={data.description}
         />
       </div>
     ));
@@ -39,7 +40,6 @@ const RocketsIndex = () => {
 
   return (
     <>
-      <h1>rockets</h1>
       {contentToDisplay}
     </>
   );
