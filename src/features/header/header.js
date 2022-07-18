@@ -23,7 +23,7 @@ const Header = () => (
             Rockets
           </NavLink>
           <NavLink to="/missions" className="nav-link">
-            Launchpads
+            Missions
           </NavLink>
           <NavLink to="/profile" className="nav-link">
             | Profile
