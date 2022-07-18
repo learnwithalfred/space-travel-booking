@@ -4,7 +4,6 @@ import Header from '../header/header';
 const Missions = () => (
   <>
     <Header />
-    <div>Missions page goes here</div>
   </>
 );
 

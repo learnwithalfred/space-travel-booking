@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 
 const Header = () => (
-  <Navbar bg="light" expand="lg" className="bg-white">
+  <Navbar bg="light" expand="lg" className="bg-white border-bottom">
     <Container>
       <Navbar.Brand href="#home">
-        <Link to="/">
-          <div clasName="d-flex justify-content-start">
-          <img src={logo} alt="Keep" width="50" className="me-3" />
-            <h1>Space Travel Hub</h1>
-            </div>
+        <Link to="/" className="text-decoration-none">
+          <div className="d-flex justify-content-start align-items-center">
+            <img src={logo} alt="Keep" width="50" className="me-3" />
+            <h1 className="h3 text-black">Space Travel Hub</h1>
+          </div>
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
