@@ -36,6 +36,7 @@ const RocketsIndex = () => {
           flickrImage={data.flickr_images[0]}
           description={data.description}
           handleReserveRocket={handleReserveRocket}
+          reserved={data.reserved}
         />
       </div>
     ));
