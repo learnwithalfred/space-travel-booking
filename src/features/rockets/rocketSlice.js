@@ -8,9 +8,17 @@ export const fetchRockets = createAsyncThunk(
   'rokets/fetchRockets',
   async () => {
     const response = await axios.get(ROCKET_URL);
+    response.data.forEach((object) => {
+      object.reserved = false;
+    });
     return response.data;
   },
 );
+
+// const handleReserve = (arr = [], id) => {
+//   const data = arr.filter(response => response.id === id)
+//   data.rese
+// }
 
 const initialState = {
   rockets: [],
@@ -21,7 +29,14 @@ const initialState = {
 const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {},
+  reducers: {
+    reserveRocket: (state, action) => {
+      const rockets = state.rockets.find(
+        (results) => results.id === action.payload,
+      );
+      rockets.reserved = true;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRockets.pending, (state) => {
@@ -41,4 +56,5 @@ const rocketsSlice = createSlice({
 export const selectAllRockets = (state) => state.rockets.rockets;
 export const getRocketsStatus = (state) => state.rockets.status;
 export const getRocketsError = (state) => state.rockets.error;
+export const { reserveRocket } = rocketsSlice.actions;
 export default rocketsSlice.reducer;
