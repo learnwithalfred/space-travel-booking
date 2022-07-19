@@ -2,12 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const DisplayRockets = (props) => {
-  const { rocketName, flickrImage, description } = props;
+  const {
+    rocketId, rocketName, flickrImage, description,
+    handleReserveRocket,
+  } = props;
 
   DisplayRockets.propTypes = {
+    rocketId: PropTypes.number.isRequired,
     rocketName: PropTypes.string.isRequired,
     flickrImage: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    handleReserveRocket: PropTypes.func.isRequired,
   };
 
   return (
@@ -45,6 +50,7 @@ const DisplayRockets = (props) => {
             {description}
           </p>
           <button
+            onClick={() => handleReserveRocket(rocketId)}
             style={{
               width: 150,
             }}
