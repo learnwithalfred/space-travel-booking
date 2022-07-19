@@ -1,8 +1,8 @@
-# React Capstone
+# Space Travel Hub
 
 ![microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-> React capstone project
+> The application will allow users to book rockets and join selected space missions
 
 ## Built With
 
@@ -62,9 +62,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- All API used in project were from Space X including
+  - [Rockets](https://api.spacexdata.com/v3/rockets)
+  - [Missions](https://api.spacexdata.com/v3/missions)
+- Inspiration and design from [Microverse Bootcamp](https://www.microverse.org/)
 
 ## 📝 License
 
