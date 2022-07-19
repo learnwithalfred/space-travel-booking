@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 
 const DisplayRockets = (props) => {
   const {
-    rocketId, rocketName, flickrImage, description,
+    rocketId,
+    rocketName,
+    flickrImage,
+    description,
     handleReserveRocket,
+    reserved,
   } = props;
 
   DisplayRockets.propTypes = {
@@ -13,7 +17,12 @@ const DisplayRockets = (props) => {
     flickrImage: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     handleReserveRocket: PropTypes.func.isRequired,
+    reserved: PropTypes.bool.isRequired,
   };
+
+  function displayReservedText(currState) {
+    return currState ? 'Reserve Rockets' : 'Cancel Reservation';
+  }
 
   return (
     <div className="container">
@@ -52,12 +61,12 @@ const DisplayRockets = (props) => {
           <button
             onClick={() => handleReserveRocket(rocketId)}
             style={{
-              width: 150,
+              width: 200,
             }}
             className="btn btn-primary"
             type="button"
           >
-            Reserve Rockets
+            {displayReservedText(reserved)}
           </button>
         </div>
       </div>
