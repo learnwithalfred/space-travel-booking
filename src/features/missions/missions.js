@@ -3,12 +3,16 @@ import {
   Alert, Button, Container, Table,
 } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions, getMissionsStatus, selectAllMissions } from './missionsSlice';
+import {
+  fetchMissions, getMissionsStatus, selectAllMissions, joinMission,
+} from './missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const status = useSelector(getMissionsStatus);
   const missions = useSelector(selectAllMissions);
+
+  const handleJoinMission = (id) => dispatch(joinMission(id));
 
   useEffect(() => {
     if (status === 'idle') {
@@ -29,16 +33,38 @@ const Missions = () => {
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <tr key={mission.id}>
+            <tr key={mission.mission_id}>
               <td width="15%">
                 <b>{mission.mission_name}</b>
               </td>
               <td width="50%">{mission.description}</td>
               <td width="15%" valign="middle" className="text-center">
-                <Alert variant="success">Not available</Alert>
+                {mission.reserved ? (
+                  <Alert variant="success" className="p-2 m-0">
+                    ACTIVE MEMBER
+                  </Alert>
+                ) : (
+                  <Alert variant="danger" className="p-2 m-0">
+                    NOT A MEMBER
+                  </Alert>
+                )}
               </td>
               <td valign="middle" className="text-center">
-                <Button variant="primary">Join mission</Button>
+                {mission.reserved ? (
+                  <Button
+                    variant="outline-danger"
+                    onClick={() => handleJoinMission(mission.mission_id)}
+                  >
+                    Leave Mission
+                  </Button>
+                ) : (
+                  <Button
+                    variant="outline-success"
+                    onClick={() => handleJoinMission(mission.mission_id)}
+                  >
+                    Join Mission
+                  </Button>
+                )}
               </td>
             </tr>
           ))}
