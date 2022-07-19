@@ -29,7 +29,7 @@ const rocketsSlice = createSlice({
       const rockets = state.rockets.find(
         (results) => results.id === action.payload,
       );
-      rockets.reserved = true;
+      rockets.reserved = !rockets.reserved;
     },
   },
   extraReducers: (builder) => {
