@@ -19,6 +19,7 @@ const initialState = {
   rockets: [],
   status: 'idle',
   error: null,
+  reserved: [],
 };
 
 const rocketsSlice = createSlice({
@@ -30,6 +31,10 @@ const rocketsSlice = createSlice({
         (results) => results.id === action.payload,
       );
       rockets.reserved = !rockets.reserved;
+    },
+    myReservedRockets: (state) => {
+      const rockets = state.rockets.filter((rocket) => (rocket.reserved === true));
+      state.reserved = rockets;
     },
   },
   extraReducers: (builder) => {
@@ -51,5 +56,6 @@ const rocketsSlice = createSlice({
 export const selectAllRockets = (state) => state.rockets.rockets;
 export const getRocketsStatus = (state) => state.rockets.status;
 export const getRocketsError = (state) => state.rockets.error;
-export const { reserveRocket } = rocketsSlice.actions;
+export const getReservedRockets = (state) => state.rockets.reserved;
+export const { reserveRocket, myReservedRockets } = rocketsSlice.actions;
 export default rocketsSlice.reducer;
