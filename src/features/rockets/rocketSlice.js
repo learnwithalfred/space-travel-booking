@@ -15,11 +15,6 @@ export const fetchRockets = createAsyncThunk(
   },
 );
 
-// const handleReserve = (arr = [], id) => {
-//   const data = arr.filter(response => response.id === id)
-//   data.rese
-// }
-
 const initialState = {
   rockets: [],
   status: 'idle',
