@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Badge from 'react-bootstrap/Badge';
 
 const DisplayRockets = (props) => {
   const {
@@ -21,7 +22,11 @@ const DisplayRockets = (props) => {
   };
 
   function displayReservedText(currState) {
-    return currState ? 'Reserve Rockets' : 'Cancel Reservation';
+    return currState ? 'Cancel Reservation' : 'Reserve Rockets';
+  }
+
+  function handleReservedButtonClass(currState) {
+    return currState ? 'btn btn-outline-secondary' : 'btn btn-primary';
   }
 
   return (
@@ -51,11 +56,22 @@ const DisplayRockets = (props) => {
           }}
         >
           <h1>{rocketName}</h1>
+
           <p
             style={{
               fontSize: '0.9rem',
             }}
           >
+            {reserved && (
+              <Badge
+                style={{
+                  marginRight: 10,
+                }}
+                bg="info"
+              >
+                Reserved
+              </Badge>
+            )}
             {description}
           </p>
           <button
@@ -63,7 +79,7 @@ const DisplayRockets = (props) => {
             style={{
               width: 200,
             }}
-            className="btn btn-primary"
+            className={handleReservedButtonClass(reserved)}
             type="button"
           >
             {displayReservedText(reserved)}
