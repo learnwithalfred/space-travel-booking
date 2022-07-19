@@ -8,7 +8,7 @@ const initialState = {
   error: null,
 };
 
-const fetchMissions = createAsyncThunk(
+export const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
   async () => {
     const response = await axios.get(
@@ -42,7 +42,6 @@ const missionsSlice = createSlice({
   },
 });
 
-export { fetchMissions };
 export const { joinMission } = missionsSlice.actions;
 export const selectAllMissions = (state) => state.missions.missions;
 export const getMissionsStatus = (state) => state.missions.status;
