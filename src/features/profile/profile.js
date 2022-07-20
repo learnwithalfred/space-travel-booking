@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Card } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { getReservedMissions } from '../missions/missionsSlice';
 import {
@@ -52,14 +53,26 @@ const ProfilePage = () => {
       <div className="row align-items-md-stretch">
         <div className="col-md-6">
           <div className="h-100 p-2 text-dark rounded-3">
-            <h2 className="text-left">My Missions</h2>
-            <ul className="list-group">{myMissions}</ul>
+            <Card className="h-100">
+              <Card.Header className="text-center">
+                <h3>My Reserved Missions</h3>
+              </Card.Header>
+              <Card.Body>
+                <ul className="list-group">{myMissions}</ul>
+              </Card.Body>
+            </Card>
           </div>
         </div>
         <div className="col-md-6">
           <div className="h-100 p-2 rounded-3">
-            <h2>My Rockets</h2>
-            <ul className="list-group">{renderReserved}</ul>
+            <Card className="h-100">
+              <Card.Header className="text-center">
+                <h3>My Reserved Rockets</h3>
+              </Card.Header>
+              <Card.Body>
+                <ul className="list-group">{renderReserved}</ul>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>

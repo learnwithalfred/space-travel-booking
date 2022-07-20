@@ -1,6 +1,0 @@
-const MissionCard = (prop) => { 
-  return (
-    <>
-    </>
-  );
-}

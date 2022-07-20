@@ -8,6 +8,7 @@ import {
   reserveRocket,
 } from './rocketSlice';
 import DisplayRockets from '../../components/DisplayRockets';
+import './rockets.css';
 
 const RocketsIndex = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,10 @@ const RocketsIndex = () => {
   if (rocketStatus === 'loading') {
     contentToDisplay = <h2>Loading...</h2>;
   } else if (rocketStatus === 'succeeded') {
-    contentToDisplay = rockets.map((data) => (
+    contentToDisplay = rockets.map((data, id) => (
       <div key={data.id}>
         <DisplayRockets
+          className={id % 2 === 0 ? 'rocket2' : 'rocket1'}
           rocketId={data.id}
           rocketName={data.rocket_name}
           rocketType={data.rocket_type}

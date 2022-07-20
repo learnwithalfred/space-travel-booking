@@ -3,6 +3,7 @@ import NavHeader from './components/header';
 import Missions from './features/missions/missions';
 import RocketsIndex from './features/rockets/rockets';
 import ProfilePage from './features/profile/profile';
+import './index.css';
 
 function App() {
   return (
