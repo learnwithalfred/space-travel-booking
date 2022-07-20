@@ -55,7 +55,7 @@ const ProfilePage = () => {
           <div className="h-100 p-2 text-dark rounded-3">
             <Card className="h-100">
               <Card.Header className="text-center">
-                <h3>My Reserved Rockets</h3>
+                <h3>My Reserved Missions</h3>
               </Card.Header>
               <Card.Body>
                 <ul className="list-group">{myMissions}</ul>

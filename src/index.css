@@ -8,7 +8,6 @@ body {
   background-image: url("./assets/images/space.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(3px);
   background-attachment: fixed;
 }
 
