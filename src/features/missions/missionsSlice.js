@@ -46,4 +46,7 @@ export const { joinMission } = missionsSlice.actions;
 export const selectAllMissions = (state) => state.missions.missions;
 export const getMissionsStatus = (state) => state.missions.status;
 export const getMissionsError = (state) => state.missions.error;
+export const getReservedMissions = (state) => state.missions.missions.filter(
+  (results) => results.reserved,
+);
 export default missionsSlice.reducer;
