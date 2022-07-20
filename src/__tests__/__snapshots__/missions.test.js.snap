@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions should render correctly 1`] = `
+<div>
+  <div
+    class="mt-4 rounded-3 container"
+  >
+    <table
+      class="bg-light rounded-3 opacity-100 table table-striped table-hover"
+      width="100%"
+    >
+      <thead>
+        <tr>
+          <th>
+            Mission Name
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;
