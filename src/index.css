@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./assets/images/space.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px);
+  background-attachment: fixed;
+}
+
+.container {
+  width: 80% !important;
+}
+
+nav {
+  width: 80%;
+  display: flex;
+  margin: 3% auto !important;
+}
+
+nav > .container {
+  width: 100% !important;
+}
+
+.rocket-wrapper {
+  display: flex;
+  height: 200;
+  margin: 2rem 0;
+}
+
+.rocket-image {
+  width: 250px;
+}

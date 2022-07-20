@@ -21,8 +21,8 @@ const Missions = () => {
   }, [status, dispatch]);
 
   return (
-    <Container className="mt-4">
-      <Table striped bordered hover>
+    <Container className="mt-4 rounded-3">
+      <Table striped width="100%" hover className="bg-light rounded-3 opacity-100">
         <thead>
           <tr>
             <th>Mission Name</th>
