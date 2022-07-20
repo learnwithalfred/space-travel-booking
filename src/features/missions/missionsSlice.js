@@ -30,15 +30,18 @@ const missionsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchMissions.pending, (state) => {
-      state.status = 'loading';
-    }).addCase(fetchMissions.fulfilled, (state, action) => {
-      state.status = 'succeeded';
-      state.missions = action.payload;
-    }).addCase(fetchMissions.rejected, (state, action) => {
-      state.status = 'failed';
-      state.error = action.error.message;
-    });
+    builder
+      .addCase(fetchMissions.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchMissions.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.missions = action.payload;
+      })
+      .addCase(fetchMissions.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
   },
 });
 
@@ -46,4 +49,6 @@ export const { joinMission } = missionsSlice.actions;
 export const selectAllMissions = (state) => state.missions.missions;
 export const getMissionsStatus = (state) => state.missions.status;
 export const getMissionsError = (state) => state.missions.error;
+export const getReservedMissions = (state) => state.missions.missions
+  .filter((results) => results.reserved);
 export default missionsSlice.reducer;
