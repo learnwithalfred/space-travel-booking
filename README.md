@@ -1,6 +1,6 @@
 # Space Travel Hub
 
-![microverse](https://img.shields.io/badge/Microverse-blueviolet)
+![Project](./src/assets/project.png)
 
 > The application will allow users to book rockets and join selected space missions
 
