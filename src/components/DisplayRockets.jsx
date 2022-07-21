@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Badge from 'react-bootstrap/Badge';
+import { getThemeColor } from '../features/theme/themeSlice';
 
 const DisplayRockets = (props) => {
   const {
-    className,
     rocketId,
     rocketName,
     flickrImage,
@@ -13,10 +14,10 @@ const DisplayRockets = (props) => {
     reserved,
   } = props;
 
-  const wrapperClass = `container rocket border border-dark rounded-3 my-4 bg-opacity-75 shadow-sm ${className}`;
+  const bgLight = useSelector(getThemeColor);
+  const wrapperClass = 'container rocket border border-dark rounded-3 my-4 bg-opacity-75 shadow-sm';
 
   DisplayRockets.propTypes = {
-    className: PropTypes.string.isRequired,
     rocketId: PropTypes.number.isRequired,
     rocketName: PropTypes.string.isRequired,
     flickrImage: PropTypes.string.isRequired,
@@ -33,6 +34,7 @@ const DisplayRockets = (props) => {
     return currState ? 'btn btn-outline-danger' : 'btn btn-success';
   }
 
+  const changeColor = (bg) => (bg ? 'white' : 'black');
   return (
     <div className={wrapperClass}>
       <div className="rocket-wrapper">
@@ -50,13 +52,19 @@ const DisplayRockets = (props) => {
             padding: '0 1rem',
           }}
         >
-          <h1 className="text-white">{rocketName}</h1>
+          <h1
+            style={{
+              color: changeColor(bgLight),
+            }}
+          >
+            {rocketName}
+          </h1>
 
           <p
             style={{
               fontSize: '0.9rem',
+              color: changeColor(bgLight),
             }}
-            className="text-white"
           >
             {reserved && (
               <Badge

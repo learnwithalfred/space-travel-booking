@@ -1,13 +1,30 @@
+import React, { useState } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import PropTypes from 'prop-types';
+import Switch from 'react-switch';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
-const NavHeader = () => {
+const NavHeader = (props) => {
+  const [checked, setChecked] = useState(false);
   const activeStyle = {
     textDecoration: 'underline',
   };
+
+  const { handleBGChange } = props;
+
+  NavHeader.propTypes = {
+    handleBGChange: PropTypes.func.isRequired,
+  };
+
+  const handleChange = () => {
+    setChecked(!checked);
+    handleBGChange(checked);
+  };
+
   return (
     <header className="d-flex justify-content-center">
       <Navbar
@@ -21,6 +38,7 @@ const NavHeader = () => {
               <div className="d-flex justify-content-start align-items-center">
                 <img src={logo} alt="Keep" width="50" className="me-3" />
                 <h1 className="h3 text-black">Space Travel Hub</h1>
+                <Switch onChange={() => handleChange()} checked={checked} />
               </div>
             </Link>
           </Navbar.Brand>

@@ -3,8 +3,12 @@ import {
   Alert, Button, Container, Table,
 } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
+import { getThemeColor } from '../theme/themeSlice';
 import {
-  fetchMissions, getMissionsStatus, selectAllMissions, joinMission,
+  fetchMissions,
+  getMissionsStatus,
+  selectAllMissions,
+  joinMission,
 } from './missionsSlice';
 
 const Missions = () => {
@@ -13,6 +17,7 @@ const Missions = () => {
   const missions = useSelector(selectAllMissions);
 
   const handleJoinMission = (id) => dispatch(joinMission(id));
+  const bgLight = useSelector(getThemeColor);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -20,9 +25,13 @@ const Missions = () => {
     }
   }, [status, dispatch]);
 
+  const updateColors = bgLight
+    ? 'bg-dark text-white rounded-3 opacity-100'
+    : 'bg-light text-dark rounded-3 opacity-100';
+
   return (
     <Container className="mt-4 rounded-3">
-      <Table striped width="100%" hover className="bg-light rounded-3 opacity-100">
+      <Table width="100%" className={updateColors}>
         <thead>
           <tr>
             <th>Mission Name</th>
