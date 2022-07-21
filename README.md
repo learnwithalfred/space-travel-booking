@@ -4,6 +4,8 @@
 
 > The application will allow users to book rockets and join selected space missions
 
+## [Live link](https://space-travel-hub-rockets.netlify.app/)
+
 ## Built With
 
 - JavaScript, HTML, CSS
