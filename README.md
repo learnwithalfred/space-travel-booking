@@ -6,6 +6,8 @@
 
 ## [Live link](https://space-travel-hub-rockets.netlify.app/)
 
+## [Tutorial](https://medium.com/@learnwithalfred/react-with-redux-toolkit-and-createasyncthunk-complementary-guide-c3a3bb2a1113)
+
 ## Built With
 
 - JavaScript, HTML, CSS
