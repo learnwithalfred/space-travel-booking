@@ -4,13 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-image: url("./assets/images/space.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .container {
   width: 80% !important;
 }
