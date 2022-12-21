@@ -29,8 +29,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Run the following command to get a working version locally
 
-- `git clone https://github.com/learnwithalfred/react-capstone-101.git`
-- `cd react-capstone-101`
+- `git clone https://github.com/learnwithalfred/space-travel-booking.git`
+- `cd space-travel-booking`
 - `npm install`
 - `npm start`
 
